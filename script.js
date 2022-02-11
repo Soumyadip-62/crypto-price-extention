@@ -36,7 +36,7 @@ fetch(
       } else {
         cclass = "minus";
       }
-      console.log(cclass);
+
       cryptoName += "<tr>";
       cryptoName +=
         "<td>" +
@@ -66,7 +66,9 @@ fetch(
         ">" +
         crypto[i].price_change_percentage_24h +
         "</td>" +
-        "<td>" +
+        "<td class= " +
+        "price" +
+        ">" +
         "₹" +
         crypto[i].current_price.toLocaleString() +
         "</td>";
@@ -76,7 +78,3 @@ fetch(
 
     document.getElementById("price").innerHTML = cryptoName;
   });
-document.getElementById("search").onclick = function () {
-  var coin = document.getElementById("coin").value;
-  search(coin);
-};
